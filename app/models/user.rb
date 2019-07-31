@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :name, presence: true, length: { minimum: 3 }
   validates :email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
-  validates :mobile_no, presence: true, length: { is: 10 }
+  validates :mobile_no, presence: true
 
 
   def self.to_csv
