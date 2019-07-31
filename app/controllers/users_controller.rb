@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
 
-      format.pdf { render pdf: "users", template: "users/user_pdf.html.erb", layout: "pdf.html.erb"}
+      format.pdf { render pdf: "users", template: "users/users_pdf.html.erb", layout: "pdf.html.erb"}
 
       format.csv { send_data @users.to_csv, filename: "users-#{Time.now.strftime("%H%M%S")}.csv"}
     end
