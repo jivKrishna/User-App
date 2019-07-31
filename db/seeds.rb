@@ -11,7 +11,7 @@ require 'faker'
   User.create(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
-    mobile_no: Faker::PhoneNumber.cell_phone_with_country_code
+    mobile_no: Faker::PhoneNumber.cell_phone
   ) 
 
   puts "50 records inserted into users table!"
