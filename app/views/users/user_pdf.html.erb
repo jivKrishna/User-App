@@ -1,0 +1,28 @@
+<div class="panel-head">
+  <h2>All 50 Users details</h2>
+</div>
+
+<div class="panel-body">
+  <tabel class="table table-striped table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.order(:name).first(50).each do |user| %>
+        <tr>
+          <td> <%= user.name %> </td>
+          <td> <%= user.eamil %> </td>
+          <td> <%= user.mobile_no %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </tabel>
+</div>
+
+<div class="footer">
+  <p class="text-center">Users are listed according to name</p>
+</div>
