@@ -13,4 +13,6 @@ require 'faker'
     email: Faker::Internet.unique.email,
     mobile_no: Faker::PhoneNumber.cell_phone_with_country_code
   ) 
+
+  puts "50 records inserted into users table!"
 end
