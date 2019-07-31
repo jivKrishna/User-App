@@ -1,8 +1,8 @@
 <% if @user.errors.any? %>
-  <p> <%= pluralize(@users.errors.count, "error") %> prevented to save into database!</p>
-  
+   <h2><%= pluralize(@user.errors.count, "error") %> prevented from saving! </h2>
+
   <ul class="danger">
-    <% @user.errors.full_message.each do |msg| %>
+    <% @user.errors.full_messages.each do |msg| %>
       <li> <%= msg %> </li>
     <% end %>
   </ul>
