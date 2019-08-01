@@ -17,10 +17,55 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.header{
+  background-color: #063444;
+  margin: 0;
+  padding: 10px;
+  margin-bottom: 15px;
+  text-shadow: 2px 3px 5px;
+}
+
+header h1:hover{
+  text-decoration: none;
+  color: #e48282;
+}
+
+header h1{
+  color: #feae81;
+}
+
+.thead-dark{
+  background-color: #063444;
+  color: #fff;
+}
 
 tr { page-break-inside: avoid }
 
 .notice{
   display: block;
-  margin: 25px 5px
+  margin: 15px 5px;
+}
+
+.thumbnail{
+  background-color: #f7f7f7;
+  color: #fff;
+  box-shadow: 5px 10px 3px;
+}
+
+body{
+  position: relative;
+}
+
+footer{
+  width: 100%;
+  background-color: #063444;
+  margin:0;
+  padding: 5px;
+  position: fixed;
+  bottom: 0;
+
+  p{
+    color: #fff;
+    bottom: 0;
+  }
 }

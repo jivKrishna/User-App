@@ -1,13 +1,13 @@
-<div class="panel-head">
-  <h1 class="success"> <%= @employee.id %> detail</h1>
+<div class="panel-heading">
+  <h1 class="text-center"> Employee-ID: <%= @employee.id %> details</h1>
 </div>
 
-<div class="panel-body">
-  <p>Name: <%= @employee.name %> </p>
-  <p>Email: <%= @employee.email %> </p>
-  <p>Phone Number: <%= @employee.phone_number %> </p>
+<div class="panel-body text-center">
+  <p>Name: <span class="text-primary"><%= @employee.name %></span> </p>
+  <p>Email: <span class="text-primary"> <%= @employee.email %> </span></p>
+  <p>Phone Number: <span class="text-primary"> <%= @employee.phone_number %> </span> </p>
 </div>
 
 <div class="panel-footer">
-  <p class="warning"> <%= @employee.id %> is craeted at <%= @employee.created_at %> </p>
+  <p class="text-warning text-center">Employee ID: <%= @employee.id %> is created at <span class="text-success"><%= @employee.created_at %></span> </p>
 </div>

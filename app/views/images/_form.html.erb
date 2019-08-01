@@ -1,3 +1,13 @@
+<% if @image.errors.any? %>
+   <h2><%= pluralize(@image.errors.count, "error") %> prevented from saving! </h2>
+
+  <ul class="danger">
+    <% @image.errors.full_messages.each do |msg| %>
+      <li class="text-danger"> <%= msg %> </li>
+    <% end %>
+  </ul>
+  
+<% end %>
 <%= form_for @image do |image|%>
   <div class="form-group">
     <%= image.label :title %>

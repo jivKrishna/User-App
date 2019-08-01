@@ -1,7 +1,23 @@
-<div class="panel-head">
-  <%= link_to "Create employee", new_employee_path, class: "btn btn-default btn-primary" %>
+<div class="panel-heading">
+  
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for "", url: employees_path, role: "search", method: :get do %>
+        <div class="row">
+          <div class="col-md-8">
+            <%= text_field_tag :search, @search_term, placeholder: "Search...", class: "form-control col-md-10" %>
+          </div>
+          <%= submit_tag "search", class: "btn btn-default btn-primary col-md-2" %>
+        </div>
+      <% end %>
+    </div>
 
-  <h2>All employees details</h2>
+    <div class="col-md-2">
+      <%= link_to "Create New", new_employee_path, class: "btn btn-default btn-primary pull-right" %>
+    </div>
+  </div>
+
+  <h2 class="text-center">All employees details</h2>
 </div>
 
 <div class="panel-body">
@@ -24,14 +40,11 @@
           <td> <%= employee.name %> </td>
           <td> <%= employee.email %> </td>
           <td> <%= employee.phone_number %> </td>
-          <td> <%= link_to "Show", employees_path(employee), class: "btn btn-default btn-primary" %> </td>
-          
+          <td> <%= link_to "Show", employee, class: "btn btn-default btn-success" %> </td>
+          <td> <%= link_to "Edit", edit_employee_path(employee), class: "btn btn-default btn-primary" %> </td>
+          <td> <%= link_to "Delete", employee, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-danger" %> </td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</div>
-
-<div class="panel-footer">
-  <%= link_to "Back", root_path, class: "btn btn-default btn-primary " %>
 </div>

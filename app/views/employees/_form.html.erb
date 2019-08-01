@@ -3,7 +3,7 @@
 
   <ul class="danger">
     <% @employee.errors.full_messages.each do |msg| %>
-      <li> <%= msg %> </li>
+      <li class="text-danger"> <%= msg %> </li>
     <% end %>
   </ul>
   
@@ -22,11 +22,11 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :mobile_no %>
-    <%= form.text_field :phone_number, placeholder: "Enter mobile number", class: "form-control", required: true %>
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number, placeholder: "Enter phone number", class: "form-control", required: true %>
   </div>
 
   <div>
-    <%= form.submit "create", class: "btn btn-default btn-primary" %>
+    <%= form.submit "submit", class: "btn btn-default btn-primary" %>
   </div>
 <% end %>

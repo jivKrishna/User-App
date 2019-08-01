@@ -7,8 +7,8 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.create(employee_params)
-    if @user.save
-      redirect_to users_path(@employee)
+    if @employee.save
+      redirect_to @employee
     else
       render :new
     end
@@ -18,11 +18,16 @@ class EmployeesController < ApplicationController
   end
 
   def index
-    @Employee = Employee.all
+    @employees = Employee.search(params[:search])
+
     respond_to do |format|
       format.html
-
-      format.pdf { render pdf: "employees", template: "employees/employees_pdf.html.erb", layout: "pdf.html.erb"}
+      
+      format.pdf do
+        render pdf: "employees", 
+        template: "employees/employees_pdf.html.erb", 
+        layout: "pdf.html.erb"
+      end
     end
   end
 
@@ -31,24 +36,23 @@ class EmployeesController < ApplicationController
 
   def update
     if @employee.update(employee_params)
-      redirect_to users_path(@employee)
+      redirect_to @employee
     else
       render :new
     end
   end
 
   def destroy
-    if @employee.destroy
-      redirect_to users_path
-    end
+    @employee.destroy
+    redirect_to employees_path
   end
 
   private
     def employee_params
-      params.require(:employee).permit(:name, :email, :phone_no)
+      params.require(:employee).permit(:name, :email, :phone_number)
     end
 
-    def find_user
+    def find_employee
       @employee = Employee.find(params[:id])
     end
 end

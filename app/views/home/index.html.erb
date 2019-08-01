@@ -1,22 +1,45 @@
 <div class="panel-heading">
-  <h1 class="text-center">Welcome to UserApp</h1>
+  <h2 class="text-center text-warning">Welcome to User App</h2>
 </div>
 
 <div class="panel-body">
-  <div class="notice">
-    <p class="caption">Download 50 employees details as pdf. <%= link_to "Download", "users.pdf", class: "btn btn-default btn-primary pull-right" %> </p>
+  <div class="thumbnail">
+    <div class="notice">
+      <p class="caption">Download 50 employees details as pdf. <%= link_to "Download", "employees.pdf", class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
+
+    <div class="notice">
+      <p class="caption">show all employees details. <%= link_to "Show Employees", employees_path, class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
   </div>
 
-  <div class="notice">
-    <p class="caption">Download 50 users details as csv. <%= link_to "Download", "users.csv", class: "btn btn-default btn-primary pull-right" %> </p>
+  <div class="thumbnail">
+    <div class="notice">
+      <p class="caption">Download 50 users details as csv. <%= link_to "Download", "users.csv", class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
+
+    <div class="notice">
+      <p class="caption">show all users details. <%= link_to "Show Users", users_path, class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
   </div>
-  
-  <div class="notice">
-    <p class="caption">Send student details as email. <%= link_to "Send mail", send_mail_path, class: "btn btn-default btn-primary pull-right" %> </p>
+
+  <div class="thumbnail">
+    <div class="notice">
+      <p class="caption">Send student details via mail. <%= link_to "Send Mail", send_details_path, class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
+
+    <div class="notice">
+      <p class="caption">show all employees details. <%= link_to "Show students", students_path, class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
+  </div>
+
+  <div class="thumbnail">
+    <div class="notice">
+      <p class="caption">Go to gallery to view images. <%= link_to "Gallery", images_path, class: "btn btn-default btn-primary pull-right" %> </p>
+    </div>
   </div>
 </div>
 
 <div class="panel-footer">
-  <%= link_to "Gallery", images_path, class: "btn btn-default btn-primary" %>
-  <%= link_to "Show all users", all_path, class: "btn btn-default btn-primary pull-right" %>
+  
 </div>

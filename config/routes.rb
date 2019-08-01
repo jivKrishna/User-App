@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :users
+  resources :employees
+  resources :students
   resources :images
 
-  root "users#index"
-
-  get "/all", to: "users#show_all"
-  get "/send_mail", to: "users#send_mail"
+  get "/send_details", to: "students#send_details"
+  root "home#index"
 end

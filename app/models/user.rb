@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
 
   def self.to_csv
-    attributes = %w{name email mobile_no}
+    attributes = %w{name email phone_number}
 
     CSV.generate(headers: true) do |csv|
       csv << attributes

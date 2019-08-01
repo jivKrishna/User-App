@@ -18,10 +18,9 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.search(params[:search])
     respond_to do |format|
       format.html
-
       format.csv { send_data @users.to_csv, filename: "users-#{Time.now.strftime("%H%M%S")}.csv"}
     end
   end
