@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
       format.html
       
       format.pdf do
-        render pdf: "employees", 
+        render pdf: "employees-#{Time.now}", 
         template: "employees/employees_pdf.html.erb", 
         layout: "pdf.html.erb"
       end

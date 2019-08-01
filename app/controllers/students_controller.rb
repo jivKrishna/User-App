@@ -38,10 +38,15 @@ class StudentsController < ApplicationController
     redirect_to students_path
   end
 
+  def mail_page
+    @student = Student.new
+  end
+
   def send_details
     @students = Student.order(:name).first(50)
+    @to = params[:email]
 
-    StudentMailer.send_details(@students).deliver_now
+    StudentMailer.send_details(@students, @to).deliver_now
     redirect_to root_path
   end
 

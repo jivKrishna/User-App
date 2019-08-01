@@ -10,4 +10,5 @@
 
 <div class="panel-footer">
   <p class="text-warning text-center">user ID: <%= @user.id %> is created at <span class="text-success"><%= @user.created_at %></span> </p>
+  <%= link_to 'Back', users_path, class: "btn btn-default btn-danger"  %>
 </div>

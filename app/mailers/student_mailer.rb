@@ -1,7 +1,8 @@
 class StudentMailer < ApplicationMailer
 
-  def send_details(students)
+  def send_details(students, to)
     @students = students
-    mail( to: "example@example.com", subject: "Students details")
+    @to = to
+    mail( to: @to, subject: "Students details")
   end
 end

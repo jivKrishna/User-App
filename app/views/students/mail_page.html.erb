@@ -1,0 +1,12 @@
+<div class="panel-heading">
+  <h2 class="text-center">Send the student details...</h2>
+</div>
+
+<div class="panel-body">
+  <%= form_for "", url: send_details_path, role: "mailing", method: :get do %>
+    <div class="form-group">
+      <%= email_field_tag :email, @mailing_term, placeholder: "Enter email...", required: true, class: "form-control" %><br>
+      <%= submit_tag "send", class: "btn btn-default btn-primary" %>
+    </div>
+  <% end %>
+</div>
