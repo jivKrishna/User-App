@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    StudentsMailer.send_details(@users).deliver_now
     respond_to do |format|
       format.html
 
@@ -47,8 +46,11 @@ class UsersController < ApplicationController
   end
 
   def send_mail
-    @users = User.order(:name).first(50)
-    StudentsMailer.send_details(@users).deliver_now
+    @users = User.all.order(:name).first(50)
+    
+    if StudentMailer.send_details(@users).deliver_now
+      redirect_to root_path
+    end
   end
 
   private

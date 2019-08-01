@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   root "users#index"
 
-  get "users/send_mail", to: "users#send_mail"
+  get "/send_mail", to: "users#send_mail"
 end
