@@ -1,0 +1,20 @@
+<div class="panel-heading">
+  <h1 class="text-center">
+    <%= @image.title %>
+  </h1>
+</div>
+
+<div class="panel-body">
+  <div class="thumbnail">
+    <%= image_tag @image.img.url %>
+    <p class="caption text-center"> <%= @image.description %> </p>
+  </div>
+</div>
+
+<div class="panel-footer">
+  <p class="text-success text-center">posted on: <%= @image.created_at.strftime("%d/%m/%Y %H:%M") %> GMT standards</p>
+
+  <%= link_to "Back", images_path, class: "btn btn-default btn-primary" %>
+  <%= link_to "Edit", edit_image_path, class: "btn btn-default btn-primary" %>
+  <%= link_to "Delete", image_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-danger" %>
+</div>

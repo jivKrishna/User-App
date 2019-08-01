@@ -70,3 +70,4 @@ gem 'sassc-rails', '>= 2.1.0'
 gem 'sprockets'
 
 gem "letter_opener", :group => :development
+gem "paperclip"

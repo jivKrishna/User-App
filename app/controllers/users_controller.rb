@@ -17,12 +17,16 @@ class UsersController < ApplicationController
   def show
   end
 
+  def show_all
+    @users = User.all
+  end
+
   def index
     @users = User.all
     respond_to do |format|
       format.html
 
-      format.pdf { render pdf: "users", template: "users/users_pdf.html.erb", layout: "pdf.html.erb"}
+      format.pdf { render pdf: "employees", template: "users/employees_pdf.html.erb", layout: "pdf.html.erb"}
 
       format.csv { send_data @users.to_csv, filename: "users-#{Time.now.strftime("%H%M%S")}.csv"}
     end
