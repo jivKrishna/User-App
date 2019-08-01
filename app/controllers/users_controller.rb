@@ -17,16 +17,10 @@ class UsersController < ApplicationController
   def show
   end
 
-  def show_all
-    @users = User.all
-  end
-
   def index
     @users = User.all
     respond_to do |format|
       format.html
-
-      format.pdf { render pdf: "employees", template: "users/employees_pdf.html.erb", layout: "pdf.html.erb"}
 
       format.csv { send_data @users.to_csv, filename: "users-#{Time.now.strftime("%H%M%S")}.csv"}
     end
@@ -49,17 +43,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def send_mail
-    @users = User.all.order(:name).first(50)
-    
-    if StudentMailer.send_details(@users).deliver_now
-      redirect_to root_path
-    end
-  end
-
   private
     def user_params
-      params.require(:user).permit(:name, :email, :mobile_no)
+      params.require(:user).permit(:name, :email, :phone_number)
     end
 
     def find_user

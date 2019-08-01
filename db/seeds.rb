@@ -7,12 +7,31 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-50.times do
+100.times do
   User.create(
     name: Faker::Name.name,
     email: Faker::Internet.unique.email,
-    mobile_no: Faker::PhoneNumber.cell_phone
+    phone_number: Faker::PhoneNumber.cell_phone
   )
 end
-
 puts "50 records inserted into users table!"
+
+
+100.times do
+  Employee.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.unique.email,
+    phone_number: Faker::PhoneNumber.cell_phone
+  )
+end
+puts "50 records inserted into employees table!"
+
+
+100.times do
+  Student.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.unique.email,
+    phone_number: Faker::PhoneNumber.cell_phone
+  )
+end
+puts "50 records inserted into students table!"

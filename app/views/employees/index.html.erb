@@ -1,7 +1,7 @@
 <div class="panel-head">
-  <%= link_to "Create User", new_user_path, class: "btn btn-default btn-primary" %>
+  <%= link_to "Create employee", new_employee_path, class: "btn btn-default btn-primary" %>
 
-  <h2>All Users details</h2>
+  <h2>All employees details</h2>
 </div>
 
 <div class="panel-body">
@@ -18,13 +18,13 @@
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @employees.each do |employee| %>
         <tr>
-          <td> <%= user.id %> </td>
-          <td> <%= user.name %> </td>
-          <td> <%= user.email %> </td>
-          <td> <%= user.phone_number %> </td>
-          <td> <%= link_to "Show", users_path(user), class: "btn btn-default btn-primary" %> </td>
+          <td> <%= employee.id %> </td>
+          <td> <%= employee.name %> </td>
+          <td> <%= employee.email %> </td>
+          <td> <%= employee.phone_number %> </td>
+          <td> <%= link_to "Show", employees_path(employee), class: "btn btn-default btn-primary" %> </td>
           
         </tr>
       <% end %>

@@ -1,7 +1,7 @@
 <div class="panel-head">
-  <%= link_to "Create User", new_user_path, class: "btn btn-default btn-primary" %>
+  <%= link_to "Create student", new_student_path, class: "btn btn-default btn-primary" %>
 
-  <h2>All Users details</h2>
+  <h2>All students details</h2>
 </div>
 
 <div class="panel-body">
@@ -11,20 +11,20 @@
         <th scope="col">Id</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <th scope="col">Mobile Number</th>
+        <th scope="col">Phone Number</th>
         <th scope="col">Show</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
-      <% @users.each do |user| %>
+      <% @students.each do |student| %>
         <tr>
-          <td> <%= user.id %> </td>
-          <td> <%= user.name %> </td>
-          <td> <%= user.email %> </td>
-          <td> <%= user.mobile_no %> </td>
-          <td> <%= link_to "Show", users_path(user), class: "btn btn-default btn-primary" %> </td>
+          <td> <%= student.id %> </td>
+          <td> <%= student.name %> </td>
+          <td> <%= student.email %> </td>
+          <td> <%= student.phone_number %> </td>
+          <td> <%= link_to "Show", students_path(student), class: "btn btn-default btn-primary" %> </td>
           
         </tr>
       <% end %>
