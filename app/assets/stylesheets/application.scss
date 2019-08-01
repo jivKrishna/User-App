@@ -17,21 +17,32 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.header{
+header .brand{
+  font-weight: bold;
+  color: #ffd700;
+  text-shadow: 5px 3px 5px #04d4f4;
+}
+
+header{
   background-color: #063444;
+  color: #fff;
   margin: 0;
-  padding: 10px;
-  margin-bottom: 15px;
-  text-shadow: 2px 3px 5px;
+  padding: 1px;
 }
 
-header h1:hover{
-  text-decoration: none;
-  color: #e48282;
-}
-
-header h1{
-  color: #feae81;
+.home{
+  font-size: 16px;
+  color: #fff;
+  font-weight: bold;
+  position: relative;
+  
+  a{
+    color: #fff;
+    padding: 5px;
+    position: absolute;
+    top: -20px;
+    left: 10px;
+  }
 }
 
 .thead-dark{
@@ -46,10 +57,18 @@ tr { page-break-inside: avoid }
   margin: 15px 5px;
 }
 
+.thumbnail h3{
+  background-color: #b3afd6;
+  color: #063444;
+  padding: 5px;
+  margin-top: 0;
+  border-radius: 5px;
+  text-shadow: 2px 2px 4px #0b6623;
+}
+
 .thumbnail{
   background-color: #f7f7f7;
-  color: #fff;
-  box-shadow: 5px 10px 3px;
+  box-shadow: 5px 8px 10px #c3b7ed;
 }
 
 body{
@@ -60,11 +79,12 @@ footer{
   width: 100%;
   background-color: #063444;
   margin:0;
-  padding: 5px;
+  padding: 2px;
   position: fixed;
   bottom: 0;
 
   p{
+    margin: auto;
     color: #fff;
     bottom: 0;
   }

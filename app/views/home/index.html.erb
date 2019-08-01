@@ -4,38 +4,42 @@
 
 <div class="panel-body">
   <div class="thumbnail">
+    <h3 class="text-center">Employees</h3>
     <div class="notice">
-      <p class="caption">Download 50 employees details as pdf. <%= link_to "Download", "employees.pdf", class: "btn btn-default btn-primary pull-right" %> </p>
+      <p class="caption">Download 50 employees details as pdf. <%= link_to "Download", "employees.pdf", class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
     </div>
 
     <div class="notice">
-      <p class="caption">show all employees details. <%= link_to "Show Employees", employees_path, class: "btn btn-default btn-primary pull-right" %> </p>
-    </div>
-  </div>
-
-  <div class="thumbnail">
-    <div class="notice">
-      <p class="caption">Download 50 users details as csv. <%= link_to "Download", "users.csv", class: "btn btn-default btn-primary pull-right" %> </p>
-    </div>
-
-    <div class="notice">
-      <p class="caption">show all users details. <%= link_to "Show Users", users_path, class: "btn btn-default btn-primary pull-right" %> </p>
+      <p class="caption">show all employees details. <%= link_to "Show", employees_path, class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
     </div>
   </div>
 
   <div class="thumbnail">
+    <h3 class="text-center">Users</h3>
     <div class="notice">
-      <p class="caption">Send student details via mail. <%= link_to "Send Mail", send_details_path, class: "btn btn-default btn-primary pull-right" %> </p>
+      <p class="caption">Download 50 users details as csv. <%= link_to "Download", "users.csv", class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
     </div>
 
     <div class="notice">
-      <p class="caption">show all employees details. <%= link_to "Show students", students_path, class: "btn btn-default btn-primary pull-right" %> </p>
+      <p class="caption">show all users details. <%= link_to "Show", users_path, class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
     </div>
   </div>
 
   <div class="thumbnail">
+    <h3 class="text-center">Students</h3>
     <div class="notice">
-      <p class="caption">Go to gallery to view images. <%= link_to "Gallery", images_path, class: "btn btn-default btn-primary pull-right" %> </p>
+      <p class="caption">Send student details via mail. <%= link_to "Send Mail", send_details_path, class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
+    </div>
+
+    <div class="notice">
+      <p class="caption">show all employees details. <%= link_to "Show", students_path, class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
+    </div>
+  </div>
+
+  <div class="thumbnail">
+    <h3 class="text-center">Image Gallery</h3>
+    <div class="notice">
+      <p class="caption">Go to gallery to view images. <%= link_to "Gallery", images_path, class: "btn btn-default btn-primary pull-right col-md-2" %> </p>
     </div>
   </div>
 </div>

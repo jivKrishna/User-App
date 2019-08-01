@@ -1,19 +1,19 @@
 <div class="panel-heading">
   
   <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-6">
+      <%= link_to "Create New", new_user_path, class: "btn btn-default btn-primary col" %>
+    </div>
+
+    <div class="col-md-6">
       <%= form_for "", url: users_path, role: "search", method: :get do %>
         <div class="row">
-          <div class="col-md-8">
-            <%= text_field_tag :search, @search_term, placeholder: "Search...", class: "form-control col-md-10" %>
+          <div class="col-md-9">
+            <%= text_field_tag :search, @search_term, placeholder: "Search...", class: "form-control col-md-6 pull-right" %>
           </div>
           <%= submit_tag "search", class: "btn btn-default btn-primary col-md-2" %>
         </div>
       <% end %>
-    </div>
-
-    <div class="col-md-2">
-      <%= link_to "Create New", new_user_path, class: "btn btn-default btn-primary pull-right" %>
     </div>
   </div>
 
