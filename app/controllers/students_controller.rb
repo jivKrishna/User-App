@@ -9,7 +9,7 @@ class StudentsController < ApplicationController
     @student = Student.create(student_params)
 
     if @student.save
-      redirect_to @student
+      redirect_to @student, notice: "A student is created successfully!"
     else
       render :new
     end
@@ -27,15 +27,16 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      redirect_to @student
+      redirect_to @student, notice: "Student is updated successfully!"
     else
       render :edit
     end
   end
 
   def destroy
-    @student.destroy
-    redirect_to students_path
+    if @student.destroy
+      redirect_to students_path, notice: "A student is deleted successfully!"
+    end
   end
 
   def mail_page
@@ -47,7 +48,7 @@ class StudentsController < ApplicationController
     @to = params[:email]
 
     StudentMailer.send_details(@students, @to).deliver_now
-    redirect_to root_path
+    redirect_to root_path, notice: "Students details are sent successfully!"
   end
 
   private 

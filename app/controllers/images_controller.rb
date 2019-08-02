@@ -16,7 +16,7 @@ class ImagesController < ApplicationController
     @image = Image.create(image_params)
 
     if @image.save
-      redirect_to @image
+      redirect_to @image, notice: "An image is created successfully!"
     else
       render :new
     end
@@ -27,15 +27,16 @@ class ImagesController < ApplicationController
 
   def update
     if @image.update(image_params)
-      redirect_to @image
+      redirect_to @image, notice: "Image is updated successfully!"
     else
       render :edit
     end
   end
 
   def destroy
-    @image.destroy
-    redirect_to images_path
+    if @image.destroy
+      redirect_to images_path, notice: "An image is deleted successfully!"
+    end
   end
 
   private

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to users_path(@user)
+      redirect_to @user, notice: "An user is created successfully!"
     else
       render :new
     end
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to users_path(@user)
+      redirect_to @user, notice: "User is updated successfully!"
     else
       render :new
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      redirect_to users_path
+      redirect_to users_path, notice: "An user is deleted successfully!"
     end
   end
 
