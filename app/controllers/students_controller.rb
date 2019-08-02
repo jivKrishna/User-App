@@ -1,6 +1,13 @@
 class StudentsController < ApplicationController
   before_action :find_student, only: [:show, :edit, :update, :destroy]
 
+  def index
+     @students = Student.search(params[:search])
+  end
+
+  def show
+  end
+  
   def new
     @student = Student.new
   end
@@ -9,17 +16,11 @@ class StudentsController < ApplicationController
     @student = Student.create(student_params)
 
     if @student.save
-      redirect_to @student, notice: "A student is created successfully!"
+      flash[:success] = "A student is created successfully!"
+      redirect_to @student
     else
       render :new
     end
-  end
-
-  def show
-  end
-
-  def index
-     @students = Student.search(params[:search])
   end
 
   def edit
@@ -27,7 +28,8 @@ class StudentsController < ApplicationController
 
   def update
     if @student.update(student_params)
-      redirect_to @student, notice: "Student is updated successfully!"
+      flash[:success] = "Student is updated successfully!"
+      redirect_to @student
     else
       render :edit
     end
@@ -35,7 +37,8 @@ class StudentsController < ApplicationController
 
   def destroy
     if @student.destroy
-      redirect_to students_path, notice: "A student is deleted successfully!"
+      flash[:success] = "Student is deleted successfully!"
+      redirect_to students_path
     end
   end
 
@@ -48,7 +51,8 @@ class StudentsController < ApplicationController
     @to = params[:email]
 
     StudentMailer.send_details(@students, @to).deliver_now
-    redirect_to root_path, notice: "Students details are sent successfully!"
+    flash[:success] = "Students details are sent successfully!"
+    redirect_to root_path
   end
 
   private 
