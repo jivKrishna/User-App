@@ -14,7 +14,7 @@ require 'faker'
     phone_number: Faker::PhoneNumber.cell_phone
   )
 end
-puts "50 records inserted into users table!"
+puts "upto 100 records inserted into users table!"
 
 
 100.times do
@@ -24,7 +24,7 @@ puts "50 records inserted into users table!"
     phone_number: Faker::PhoneNumber.cell_phone
   )
 end
-puts "50 records inserted into employees table!"
+puts "upto 100 records inserted into employees table!"
 
 
 100.times do
@@ -34,4 +34,4 @@ puts "50 records inserted into employees table!"
     phone_number: Faker::PhoneNumber.cell_phone
   )
 end
-puts "50 records inserted into students table!"
+puts "upto 100 records inserted into students table!"
