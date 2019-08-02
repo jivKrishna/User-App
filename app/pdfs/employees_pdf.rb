@@ -12,7 +12,7 @@ class EmployeesPdf < Prawn::Document
       row(0).text_color = "ffffff"
       self.row_colors = ["eeeeee", "ffffff"]
       self.header = true
-      cells.style(size: 10, align: :center, padding: [5, 35])
+      cells.style(size: 10, padding: [5, 35])
     end
   end
 
