@@ -8,9 +8,12 @@ class EmployeesController < ApplicationController
       format.html
       
       format.pdf do
-        render pdf: "employees-#{Time.now}", 
-        template: "employees/employees_pdf.html.erb", 
-        layout: "pdf.html.erb"
+        pdf = EmployeesPdf.new(@employees)
+
+        send_data pdf.render,
+          filename: "Employees-#{Time.new.strftime("%d/%m/%Y-%H%M%S")}.pdf",
+          type: "application/pdf", 
+          isposition: "inline"
       end
     end
   end
