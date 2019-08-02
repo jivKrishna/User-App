@@ -1,22 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.create(user_params)
-    if @user.save
-      redirect_to @user, notice: "An user is created successfully!"
-    else
-      render :new
-    end
-  end
-
-  def show
-  end
-
   def index
     @users = User.search(params[:search])
     respond_to do |format|
@@ -25,12 +9,30 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.create(user_params)
+    if @user.save
+      flash[:success] = "An user is created successfully!"
+      redirect_to @user
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
   def update
     if @user.update(user_params)
-      redirect_to @user, notice: "User is updated successfully!"
+      flash[:success] = "User is updated successfully!"
+      redirect_to @user
     else
       render :new
     end
@@ -38,7 +40,8 @@ class UsersController < ApplicationController
 
   def destroy
     if @user.destroy
-      redirect_to users_path, notice: "An user is deleted successfully!"
+      flash[:success] = "An user is deleted successfully!"
+      redirect_to users_path
     end
   end
 
