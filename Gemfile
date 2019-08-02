@@ -64,8 +64,10 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #for pdf generation
-gem 'wicked_pdf', '~> 1.4'
-gem 'wkhtmltopdf-binary', '~> 0.12.4'
+# gem 'wicked_pdf', '~> 1.4'
+# gem 'wkhtmltopdf-binary', '~> 0.12.4'
+gem 'prawn', '~> 2.1'
+gem 'prawn-table', '~> 0.2.2'
 
 #for bootstrap
 gem 'bootstrap-sass', '~> 3.4.1'
