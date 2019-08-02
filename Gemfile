@@ -39,7 +39,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'faker'
+  gem 'faker', '~> 1.6', '>= 1.6.6'
+  gem 'letter_opener', '~> 1.7'
 end
 
 group :development do
@@ -62,12 +63,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+#for pdf generation
+gem 'wicked_pdf', '~> 1.4'
+gem 'wkhtmltopdf-binary', '~> 0.12.4'
 
+#for bootstrap
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
-gem 'sprockets'
+gem 'sprockets', '~> 3.7', '>= 3.7.2'
 
-gem "letter_opener", :group => :development
-gem "paperclip"
+#for images
+gem 'paperclip', '~> 6.1'
