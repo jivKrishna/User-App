@@ -14,7 +14,7 @@
 <div class="panel-footer">
   <p class="text-success text-center">posted on: <%= @image.created_at.strftime("%d/%m/%Y %H:%M") %> GMT standards</p>
 
-  <%= link_to "Back", images_path, class: "btn btn-default btn-primary" %>
+  <%= link_to "Back", images_path, class: "btn btn-default btn-warning" %>
   <%= link_to "Edit", edit_image_path, class: "btn btn-default btn-primary" %>
   <%= link_to "Delete", image_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-danger" %>
 </div>

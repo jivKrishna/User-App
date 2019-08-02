@@ -4,6 +4,9 @@
 
 <div class="panel-body">
   <div class="row">
+    <% if @images.count == 0 %>
+      <p class="text-danger text-center">Gallery is empty, please upload!</p>
+    <% end %>
     <% @images.each do |image| %>
       <div class="col-md-4">
         <div class="thumbnail">

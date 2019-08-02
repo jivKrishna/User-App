@@ -5,7 +5,7 @@
 <div class="panel-body">
   <%= form_for "", url: send_details_path, role: "mailing", method: :get do %>
     <div class="form-group">
-      <%= email_field_tag :email, @mailing_term, placeholder: "Enter email...", required: true, class: "form-control" %><br>
+      <%= email_field_tag :email, @mailing_term, placeholder: "Enter receiver email...", required: true, class: "form-control" %><br>
       <%= submit_tag "send", class: "btn btn-default btn-primary" %>
     </div>
   <% end %>

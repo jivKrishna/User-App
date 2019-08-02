@@ -1,14 +1,16 @@
 <div class="panel-heading">
-  <h1 class="text-center"> Student-ID: <%= @student.id %> details</h1>
+  <h1 class="text-center"> Student-ID: S00<%= @student.id %></h1>
 </div>
 
-<div class="panel-body text-center">
-  <p>Name: <span class="text-primary"><%= @student.name %></span> </p>
-  <p>Email: <span class="text-primary"> <%= @student.email %> </span></p>
-  <p>Phone Number: <span class="text-primary"> <%= @student.phone_number %> </span> </p>
+<div class="panel-body">
+  <div class="col-md-4 col-md-offset-4">
+    <p><strong>Name:</strong> <span class="text-primary"><%= @student.name %></span> </p>
+    <p><strong>Email:</strong> <span class="text-primary"> <%= @student.email %> </span></p>
+    <p><strong>Phone Number:</strong> <span class="text-primary"> <%= @student.phone_number %> </span> </p>
+  </div>
 </div>
 
 <div class="panel-footer">
-  <p class="text-warning text-center">student ID: <%= @student.id %> is created at <span class="text-success"><%= @student.created_at %></span> </p>
-  <%= link_to 'Back', students_path, class: "btn btn-default btn-danger"  %>
+  <p class="text-warning text-center">student ID: <%= @student.id %> is created at: <span class="text-success"><%= @student.created_at.strftime("%d/%m/%Y  %H:%M:%S") %>UTC</span> </p>
+  <%= link_to 'Back', students_path, class: "btn btn-default btn-warning"  %>
 </div>
