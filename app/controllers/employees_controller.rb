@@ -1,22 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :find_employee, only: [:show, :edit, :update, :destroy]
 
-  def new
-    @employee = Employee.new
-  end
-
-  def create
-    @employee = Employee.create(employee_params)
-    if @employee.save
-      redirect_to @employee, notice: "An employee is created successfully!"
-    else
-      render :new
-    end
-  end
-
-  def show
-  end
-
   def index
     @employees = Employee.search(params[:search])
 
@@ -31,12 +15,30 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def new
+    @employee = Employee.new
+  end
+
+  def create
+    @employee = Employee.create(employee_params)
+    if @employee.save
+      flash[:success] = "An employee is created successfully!"
+      redirect_to @employee
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
   def update
     if @employee.update(employee_params)
-      redirect_to @employee, notice: "Employee is updated successfully!"
+      flash[:success] = "Employee is updated successfully!"
+      redirect_to @employee
     else
       render :new
     end
@@ -44,7 +46,8 @@ class EmployeesController < ApplicationController
 
   def destroy
     if @employee.destroy
-      redirect_to employees_path, notice: "An employee is deleted successfully!"
+      flash[:success] = "An employee is deleted successfully!"
+      redirect_to employees_path
     end
   end
 
